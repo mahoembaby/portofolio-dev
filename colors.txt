@@ -1,0 +1,30 @@
+bg-1: #000000
+bg-2: #18181B
+
+bg-navbar: #252528
+
+color-text-main: #F4F4F5
+
+color-text-paragraph: #A1A1AA
+
+color-link& hover: #14B3A1
+
+section-hover: #1F1F22
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

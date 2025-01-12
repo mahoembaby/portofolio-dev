@@ -1,0 +1,393 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+/*
+=================================================
+========== Global Style
+=================================================
+*/
+
+:root {
+  --bg-primary: #000000;
+  --bg-second: #18181b;
+  --bg-navbar: #252528;
+  --text-main: #f4f4f5;
+  --text-paragraph: #a1a1aa;
+  --color-link: #14b3a1;
+  --section-hover: #1f1f22;
+  --transition: 0.3s all ease;
+}
+
+::selection {
+  background-color: var(--text-paragraph);
+  color: var(--bg-navbar);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  cursor: url(/src/icons/cursor-black.svg), auto;
+}
+
+body {
+  scroll-behavior: smooth;
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  font-family: "Roboto", serif;
+  height: 2000px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-main);
+  /* cursor: pointer; */
+}
+
+li {
+  list-style: none;
+}
+button {
+  all: unset;
+}
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  width: 100%;
+  max-width: 80%;
+  margin-inline: auto;
+  padding: 1rem;
+  background-color: var(--bg-second);
+}
+
+/*
+=================================================
+========== Navigation Section Style
+=================================================
+*/
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  padding: 1rem;
+}
+
+.navbar .navlist {
+  display: flex;
+  gap: 1.5rem;
+  background-color: var(--bg-navbar);
+  padding: 0;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.navbar .navlist a {
+  display: block;
+  padding: 1rem 1.5rem;
+  font-size: 1.3rem;
+  text-transform: capitalize;
+  transition: var(--transition);
+}
+.navbar .navlist a:hover {
+  color: var(--color-link);
+  background-color: #ffffff05;
+}
+
+#menu-icon,
+#menu-icon-close {
+  display: none;
+}
+
+@media (max-width: 930px) {
+  .navbar {
+    padding: 1rem;
+  }
+
+  .navbar .navlist {
+    display: none;
+  }
+
+  .navbar .navlist.show {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(28, 26, 26, 0.871);
+    z-index: 1000;
+    border-radius: 0;
+    padding: 7rem 2rem 0;
+    animation: showup 0.5s ease 0s 1 normal none;
+  }
+
+  #menu-icon-close.block {
+    display: block;
+    margin-left: auto;
+    font-size: 1.5rem;
+    color: var(--text-paragraph);
+    position: fixed;
+    top: 3rem;
+    right: 4rem;
+    font-size: 2rem;
+    z-index: 2000;
+    transition: 0.5s all ease;
+  }
+  #menu-icon-close.block:hover {
+    color: rgb(202, 6, 6);
+    transform: rotate(1turn);
+    font-size: 2rem;
+  }
+
+  #menu-icon {
+    display: block;
+    margin-left: auto;
+    font-size: 1.5rem;
+    color: var(--text-paragraph);
+    background-color: #a1a1aa29;
+    padding: 0.7rem;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    transition: var(--transition);
+  }
+  #menu-icon:hover {
+    border: 1px solid var(--text-main);
+    color: var(--text-main);
+  }
+  #menu-icon.hide {
+    display: none;
+  }
+}
+
+/*
+=================================================
+========== Hero Section Styling
+=================================================
+*/
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  column-gap: 1rem;
+  padding-block: 4rem;
+  padding-inline: 1rem;
+  justify-content: center;
+  width: 90%;
+  margin-inline: auto;
+}
+
+.hero .hero-img {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  box-shadow: 5px 3px 25px -1px rgba(151, 151, 151, 0.49);
+  transition: var(--transition);
+}
+.hero .hero-img:hover {
+  transform: scale(1.1) translateX(5px);
+}
+.hero .hero-text h1 {
+  font-size: 3rem;
+  text-transform: capitalize;
+  padding-block: 1rem 2rem;
+}
+.hero .hero-text p {
+  font-size: 1.4rem;
+  color: var(--text-paragraph);
+  width: 80%;
+  margin-bottom: 3rem;
+}
+.hero .hero-social {
+  display: flex;
+  column-gap: 3rem;
+  padding: 1rem 1.5rem;
+}
+.hero .hero-social a {
+  font-size: 2.5rem;
+  color: var(--text-paragraph);
+  transition: var(--transition);
+}
+.hero .hero-social a:hover {
+  color: var(--text-main);
+  transform: translateX(5px);
+}
+
+/*
+=================================================
+========== Filterable Section Styling
+=================================================
+*/
+
+.filter {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.btn {
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  background-color: var(--section-hover);
+  color: var(--text-paragraph);
+  border: 1px solid transparent;
+  border-radius: 10px;
+  cursor: pointer;
+  text-transform: capitalize;
+  transition: 0.5s all ease;
+}
+.btn:hover {
+  border: 1px solid var(--color-link);
+  color: var(--text-main);
+  box-shadow: 8px 7px 15px 0px rgba(67, 78, 128, 0.38);
+}
+
+.btn.active {
+  border: 1px solid var(--color-link);
+  color: var(--text-main);
+  box-shadow: 1px 8px 17px -6px rgba(67, 78, 128, 1);
+}
+
+.items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+}
+
+.item {
+  display: flex;
+  row-gap: 2rem;
+  border: 1px solid transparent;
+  transition: 0.5s all ease;
+}
+.item:hover {
+  border: 1px solid var(--color-link);
+  box-shadow: -5px 8px 15px 0px rgba(67, 78, 128, 0.39),
+    12px -4px 19px -1px rgba(66, 82, 110, 0.14);
+}
+
+.item .item-image {
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+.item .item-image img {
+  object-fit: cover;
+  object-position: center;
+  transition: 0.5s all ease;
+}
+.item:hover .item-image img {
+  transform: scale(1.1);
+}
+.item .item-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 1rem;
+}
+.item .item-content h3 {
+  font-size: 1.5rem;
+  padding: 1rem 0;
+  text-transform: capitalize;
+}
+.item .item-content p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-paragraph);
+  padding: 1rem 0;
+}
+.item .item-content .social-media {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  column-gap: 2rem;
+  padding: 1rem 1.5rem;
+}
+.item .item-content .social-media a:first-child {
+  margin-right: auto;
+}
+.item .item-content .social-media a {
+  font-size: 1.5rem;
+  color: var(--text-paragraph);
+  transition: var(--transition);
+}
+.item .item-content .social-media a:hover {
+  color: var(--text-main);
+  transform: translateX(5px);
+}
+
+@media (max-width: 500px) {
+  .items {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+  }
+}
+/*
+=================================================
+========== Footer Section Styling
+=================================================
+*/
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0.5rem;
+  /* flex-wrap: wrap; */
+  border: 1px solid red;
+  margin-top: 5rem;
+}
+
+footer .foot-links {
+  display: flex;
+  gap: 1rem;
+}
+
+footer .foot-links a {
+  font-size: 0.8rem;
+  color: var(--text-paragraph);
+  text-transform: capitalize;
+  transition: 0.5s all ease;
+}
+footer .foot-links a:hover {
+  color: var(--color-link);
+}
+
+footer .foot-copywrite {
+  font-size: 0.8rem;
+  color: var(--text-paragraph);
+  text-transform: capitalize;
+}
+
+/*
+=================================================
+========== Animation Section Styling
+=================================================
+*/
+
+@keyframes showup {
+  0% {
+    transform: scale(0.8);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
