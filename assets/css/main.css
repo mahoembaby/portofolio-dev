@@ -248,11 +248,18 @@ img {
 */
 
 .filter {
+  white-space: nowrap;
   margin-bottom: 20px;
-  display: flex;
-  justify-content: center;
+  width: 100%;
+  display: inline-flex;
+  overflow-x: auto;
+  overflow-wrap: break-word;
+  overscroll-behavior-x: contain;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
+  padding-block: 1rem;
 }
 
 .btn {
